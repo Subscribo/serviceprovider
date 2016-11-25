@@ -14,5 +14,5 @@ Might contain also custom code
 1.2 Dependency under "require" key
 
 ```json
-    "subscribo/serviceprovider": "~0.1.0"
+    "subscribo/serviceprovider": "~0.1.1"
 ```
