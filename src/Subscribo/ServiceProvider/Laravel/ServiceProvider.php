@@ -8,7 +8,11 @@ use ReflectionClass;
  * This class have been taken from Laravel Framework 4.2 (www.laravel.com) with few modifications, basically these:
  * - namespace has been changed from Illuminate\Support to Subscribo\ServiceProvider\Laravel
  * - class is now extending the original class
- * - abstract public function register() has been commented out
+ * - some things has been commented out:
+ *    - protected properties $app and $defer
+ *    - constructor
+ *    - abstract public method register()
+ *    - public methods commands(), provides(), when() and isDeferred()
  *
  * @license MIT
  * @package Subscribo\ServiceProvider
@@ -20,14 +24,14 @@ abstract class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 	 *
 	 * @var \Illuminate\Foundation\Application
 	 */
-	protected $app;
+	//protected $app;
 
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	//protected $defer = false;
 
 	/**
 	 * Create a new service provider instance.
@@ -35,10 +39,12 @@ abstract class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 	 * @param  \Illuminate\Foundation\Application  $app
 	 * @return void
 	 */
+    /*
 	public function __construct($app)
 	{
 		$this->app = $app;
 	}
+    */
 
 	/**
 	 * Bootstrap the application events.
@@ -144,6 +150,7 @@ abstract class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 	 * @param  array  $commands
 	 * @return void
 	 */
+    /*
 	public function commands($commands)
 	{
 		$commands = is_array($commands) ? $commands : func_get_args();
@@ -158,6 +165,7 @@ abstract class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 			$artisan->resolveCommands($commands);
 		});
 	}
+    */
 
 	/**
 	 * Get the application package view path.
@@ -175,29 +183,34 @@ abstract class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 	 *
 	 * @return array
 	 */
+    /*
 	public function provides()
 	{
 		return array();
 	}
+    */
 
 	/**
 	 * Get the events that trigger this service provider to register.
 	 *
 	 * @return array
 	 */
+    /*
 	public function when()
 	{
 		return array();
 	}
+    */
 
 	/**
 	 * Determine if the provider is deferred.
 	 *
 	 * @return bool
 	 */
+    /*
 	public function isDeferred()
 	{
 		return $this->defer;
 	}
-
+    */
 }
